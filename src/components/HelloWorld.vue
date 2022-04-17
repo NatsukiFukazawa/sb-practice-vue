@@ -53,6 +53,12 @@
         <h2 class="headline font-weight-bold mb-3">
           Important Links
         </h2>
+        
+        <router-link to="/">HOME</router-link>
+      
+        
+        <router-link to="/page01">Page01</router-link>
+        
 
         <v-row justify="center">
           <a
@@ -88,6 +94,8 @@
         </v-row>
       </v-col>
     </v-row>
+     
+    <router-link to="/login">login</router-link>
   </v-container>
 </template>
 
