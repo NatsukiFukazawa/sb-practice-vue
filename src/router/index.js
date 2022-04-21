@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import LogInPageView from '../views/LogInPageView'
 import HomePageView from '../views/HomePageView'
+import TestUserIndex from '../views/TestUserIndex.vue'
 
 Vue.use(VueRouter)
 
@@ -28,6 +29,10 @@ const routes = [
   {
     path: '/home',
     component: HomePageView
+  },
+  {
+    path: '/test_user_index',
+    component: TestUserIndex
   },
 ]
 

@@ -5,6 +5,7 @@ async function getUser(obj,url){
     
     try{
         const response = await axios.get(str(url),params,{ResponseType:'application/json'})
+        console.log(data);
         return response.data
     }   
     catch(e){
