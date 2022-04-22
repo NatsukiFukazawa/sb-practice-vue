@@ -14,7 +14,6 @@
   
       <v-text-field
         v-model="email"
-        :rules="emailRules"
         label="E-mail"
         required
       ></v-text-field>
@@ -71,6 +70,8 @@ export default {
       v => !!v || 'Password is required',
       v => (v && v.length <= 10) || 'Passwword must be less than 10 characters',
     ],
+    email:'',
+    
   }),
     methods: {
     validate () {
