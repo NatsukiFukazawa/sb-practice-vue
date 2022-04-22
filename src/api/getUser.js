@@ -6,8 +6,11 @@ async function getUser(obj,url){
     //const apiurl = url
     const apiurl = "http://ec2-54-179-114-169.ap-southeast-1.compute.amazonaws.com:8080/sb_practice_back"
     try{
+
+      
+
         return response = await axios.get(str(apiurl),params,{ResponseType:'application/json'})
-        
+
     }   
     catch(e){
         const {
