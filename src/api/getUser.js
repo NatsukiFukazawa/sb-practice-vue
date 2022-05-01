@@ -1,15 +1,15 @@
 import axios from 'axios'
 
 async function getUser(obj,url){
-    params = JSON.stringify(obj)
+    const params = JSON.stringify(obj)
     
-    //const apiurl = url
-    const apiurl = "http://ec2-54-179-114-169.ap-southeast-1.compute.amazonaws.com:8080/sb_practice_back"
+    // const apiurl = url
+    const apiurl = "http://ec2-54-179-114-169.ap-southeast-1.compute.amazonaws.com:8080/sb_practice_back" +url
     try{
 
       
 
-        return response = await axios.get(str(apiurl),params,{ResponseType:'application/json'})
+        return await axios.get(apiurl,params,{ResponseType:'application/json'})
 
     }   
     catch(e){

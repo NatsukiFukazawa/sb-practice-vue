@@ -1,98 +1,71 @@
 <template>
-  <v-form
-      ref="form"
-      v-model="valid"
-      lazy-validation
-    >
-      <v-text-field
-        v-model="userid"
-        :counter="10"
-        :rules="useridRules"
-        label="userid"
-        required
-      ></v-text-field>
-  
-      <v-text-field
-        v-model="email"
-        label="E-mail"
-        required
-      ></v-text-field>
+  <v-form ref="form" v-model="valid" lazy-validation>
+    <v-text-field
+      v-model="userid"
+      :counter="10"
+      :rules="useridRules"
+      label="userid"
+      required
+    ></v-text-field>
 
-      <v-text-field
-        v-model="pass"
-        :rules="passRules"
-        label="password"
-        required
-      ></v-text-field>
+    <v-text-field v-model="email" label="E-mail" required></v-text-field>
 
-  
-      <v-btn
-        :disabled="!valid"
-        color="success"
-        class="mr-4"
-        @click="validate"
-      >
-        Validate
-      </v-btn>
-  
-      <v-btn
-        color="error"
-        class="mr-4"
-        @click="reset"
-      >
-        Reset Form
-      </v-btn>
-  
-      <v-btn
-        color="warning"
-        @click="home"
-      >
-        homepage
-      </v-btn>
-    </v-form>
+    <v-text-field
+      v-model="pass"
+      :rules="passRules"
+      label="password"
+      required
+    ></v-text-field>
+
+    <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">
+      Validate
+    </v-btn>
+
+    <v-btn color="error" class="mr-4" @click="reset"> Reset Form </v-btn>
+
+    <v-btn color="warning" @click="home"> homepage </v-btn>
+  </v-form>
 </template>
 
 <script>
-import getUser from '../api/getUser'
+import getUser from "../api/getUser";
 
 export default {
-    name: 'login',
-    
-    data: () => ({
+  name: "login-page",
+
+  data: () => ({
     valid: true,
-    userid: '',
+    userid: "",
     useridRules: [
-      v => !!v || 'userid is required',
-      v => (v && v.length <= 10) || 'userid must be less than 10 characters',
+      (v) => !!v || "userid is required",
+      (v) => (v && v.length <= 10) || "userid must be less than 10 characters",
     ],
-    pass: '',
+    pass: "",
     passRules: [
-      v => !!v || 'Password is required',
-      v => (v && v.length <= 10) || 'Passwword must be less than 10 characters',
+      (v) => !!v || "Password is required",
+      (v) =>
+        (v && v.length <= 10) || "Passwword must be less than 10 characters",
     ],
-    email:'',
-    
+    email: "",
   }),
-    methods: {
-    validate () {
-      this.$refs.form.validate()
+  methods: {
+    validate() {
+      this.$refs.form.validate();
     },
-    reset () {
-      this.$refs.form.reset()
+    reset() {
+      this.$refs.form.reset();
     },
-    resetValidation () {
-      this.$refs.form.resetValidation()
+    resetValidation() {
+      this.$refs.form.resetValidation();
     },
-    home () {
-      this.$router.push('/home')
+    home() {
+      this.$router.push("/home");
     },
-    getUser(){
-        getUser()
-    }
+    getUser() {
+      getUser();
+    },
   },
-}
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

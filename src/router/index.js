@@ -4,6 +4,8 @@ import HomeView from '../views/HomeView.vue'
 import LogInPageView from '../views/LogInPageView'
 import HomePageView from '../views/HomePageView'
 import TestUserIndex from '../views/TestUserIndex.vue'
+import IndexDetail from '../components/IndexDetail'
+import AddReview from '../components/AddReview'
 
 Vue.use(VueRouter)
 
@@ -34,6 +36,20 @@ const routes = [
     path: '/test_user_index',
     component: TestUserIndex
   },
+  {
+    path: '/index/:id',
+    name: 'detail',
+    component: IndexDetail,
+    props:true,
+    
+  },
+  {
+    path: '/index/:id/addreview',
+    name: 'addreview',
+    component: AddReview,
+    props:true,
+  },
+ 
 ]
 
 const router = new VueRouter({

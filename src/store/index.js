@@ -3,9 +3,16 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-const state ={}
+const state ={
+  userId:"",
+  userName:"",
+  access_token:"",
+
+}
 const getters = {}
-const mutations = {}
+const mutations = {
+  
+}
 const actions = {}
 const modules = {}
 
